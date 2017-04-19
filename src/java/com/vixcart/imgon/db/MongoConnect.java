@@ -30,7 +30,7 @@ public class MongoConnect {
     private final MongoDatabase db;
 
     public MongoConnect() throws Exception {
-        MongoClientURI uri = new MongoClientURI("mongodb://localhost/");
+        MongoClientURI uri = new MongoClientURI("mongodb://35.154.242.9/");
         MongoClient mongoClient = new MongoClient(uri);
         db = mongoClient.getDatabase("vaydeal");
     }
