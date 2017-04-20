@@ -28,11 +28,16 @@ import com.vixcart.imgon.jsn.JSONParser;
 public class MongoConnect {
     
     private final MongoDatabase db;
+    private final MongoClient mongoClient;
 
     public MongoConnect() throws Exception {
         MongoClientURI uri = new MongoClientURI("mongodb://35.154.242.9/");
-        MongoClient mongoClient = new MongoClient(uri);
+        mongoClient = new MongoClient(uri);
         db = mongoClient.getDatabase("vaydeal");
+    }
+    
+    public void closeConnection() throws Exception{
+        mongoClient.close();
     }
     
     public AdminID getAdminID(String at) throws IOException {

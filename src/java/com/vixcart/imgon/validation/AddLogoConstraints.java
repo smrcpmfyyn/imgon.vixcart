@@ -123,8 +123,9 @@ public class AddLogoConstraints implements AddLogoValidator {
     }
 
     @Override
-    public void closeConnection() throws SQLException {
+    public void closeConnection() throws Exception {
         dbc.closeConnection();
+        mdbc.closeConnection();
     }
 
 }

@@ -106,7 +106,10 @@ public class addLogo extends HttpServlet {
                     }
                 }
                 Cookie ck = Servlets.getCookie(request, "at");
-                String at = ck.getValue();
+                String at = "";
+                if (ck != null) {
+                    at = ck.getValue();
+                }
                 AddLogo req = new AddLogo(at, company, fileName, fileSize);
                 AddLogoValidation reqV = new AddLogoValidation(req);
                 reqV.validation();

@@ -25,7 +25,7 @@ public interface Validator {
      *
      * @throws SQLException
      */
-    public void closeConnection() throws SQLException;
+    public void closeConnection() throws Exception;
     public String validateAccessToken() throws Exception;
     public String validateUserType(String adminType) throws Exception;
 }
